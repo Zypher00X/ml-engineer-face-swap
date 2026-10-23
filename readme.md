@@ -1,335 +1,144 @@
-<h1 align="center">LivePortrait: Efficient Portrait Animation with Stitching and Retargeting Control</h1>
+# ML engineer Project face swap
 
-<div align='center'>
-    <a href='https://github.com/cleardusk' target='_blank'><strong>Jianzhu Guo</strong></a><sup> 1*†</sup>&emsp;
-    <a href='https://github.com/Mystery099' target='_blank'><strong>Dingyun Zhang</strong></a><sup> 1,2*</sup>&emsp;
-    <a href='https://github.com/KwaiVGI' target='_blank'><strong>Xiaoqiang Liu</strong></a><sup> 1</sup>&emsp;
-    <a href='https://github.com/zzzweakman' target='_blank'><strong>Zhizhou Zhong</strong></a><sup> 1,3</sup>&emsp;
-    <a href='https://scholar.google.com.hk/citations?user=_8k1ubAAAAAJ' target='_blank'><strong>Yuan Zhang</strong></a><sup> 1</sup>&emsp;
-</div>
+**โปรแกรมสลับใบหน้าผ่าน GUI ภาษาไทยบน Windows ด้วย HyperSwap 256**
 
-<div align='center'>
-    <a href='https://scholar.google.com/citations?user=P6MraaYAAAAJ' target='_blank'><strong>Pengfei Wan</strong></a><sup> 1</sup>&emsp;
-    <a href='https://openreview.net/profile?id=~Di_ZHANG3' target='_blank'><strong>Di Zhang</strong></a><sup> 1</sup>&emsp;
-</div>
+เลือกภาพต้นฉบับ **A** เพื่อใช้ตัวตน และภาพเป้าหมาย **B** เพื่อใช้ท่าศีรษะ สีหน้า และองค์ประกอบภาพ จากนั้นกดเริ่มสลับใบหน้า ดูผล และบันทึกเป็น PNG ได้ในหน้าจอเดียว
 
-<div align='center'>
-    <sup>1 </sup>Kuaishou Technology&emsp; <sup>2 </sup>University of Science and Technology of China&emsp; <sup>3 </sup>Fudan University&emsp;
-</div>
-<div align='center'>
-    <small><sup>*</sup> Equal contributions</small>
-    <small><sup>†</sup> Project lead</small>
-</div>
-<br>
+โปรเจคนี้พัฒนาต่อยอดจาก [LivePortrait ของ Kuaishou / KwaiVGI](https://github.com/KwaiVGI/LivePortrait) โดยเพิ่ม GUI โทนดำ, HyperSwap backend, การลด alias จากการย่อภาพ, การผสานแบบคำนึงถึงแว่น/สีผิว และข้อมูลตรวจสอบผล โค้ดส่วนต่อยอดดูแลโดย [Zypher00X](https://github.com/Zypher00X) โมเดล pretrained เป็นผลงานของเจ้าของโมเดลที่ให้เครดิตด้านล่าง
 
-<!-- ===== LivePortrait – Quick Start & Links ===== -->
-<div align="center">
+## หน้าตาโปรแกรม
 
-  <!-- 🚀 Quick Start buttons -->
-  <p>
-    <a href="https://huggingface.co/cleardusk/LivePortrait-Windows/blob/main/LivePortrait-Windows-v20240829.zip" target="_blank"><img src="https://img.shields.io/badge/🖥 Windows Installer-v20240829-00BFFF?style=for-the-badge&logo=windows&logoColor=white" alt="Windows one-click installer"></a>&nbsp;
-    <a href="https://huggingface.co/spaces/KlingTeam/LivePortrait" target="_blank"><img src="https://img.shields.io/badge/🌐 Try Online Demo-FF6F00?style=for-the-badge&logo=huggingface&logoColor=white" alt="HuggingFace online demo"></a>
-  </p>
+![GUI ของโปรแกรมขณะทดสอบจริง](docs/readme_assets/gui.png)
 
-  <!-- 📄 Paper / project / GitHub stats -->
-  <p>
-    <a href="https://arxiv.org/pdf/2407.03168" target="_blank"><img src="https://img.shields.io/badge/arXiv-LivePortrait-red" alt="arXiv link"></a>&nbsp;
-    <a href="https://liveportrait.github.io" target="_blank"><img src="https://img.shields.io/badge/Project-Homepage-green" alt="project homepage"></a>&nbsp;
-    <a href="https://huggingface.co/spaces/KlingTeam/LivePortrait" target="_blank"><img src="https://img.shields.io/badge/🤗 Hugging Face-Spaces-blue" alt="HF space"></a>&nbsp;
-    <a href="https://hellogithub.com/repository/bed652ef02154dd7a434e0720125639e" target="_blank"><img src="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=bed652ef02154dd7a434e0720125639e&claim_uid=XyBT2K9QJ7RZhej&theme=small" alt="Featured by HelloGitHub"></a>&nbsp;
-    <a href="https://github.com/KlingTeam/LivePortrait" target="_blank"><img src="https://img.shields.io/github/stars/KlingTeam/LivePortrait?style=social" alt="GitHub stars"></a>
-  </p>
+*ภาพหน้าจอจากโปรแกรมจริง ไม่ใช่ภาพ mockup*
 
-  <!-- 🌏 Language switch -->
-  <p><strong>English</strong> | <a href="./readme_zh_cn.md"><strong>简体中文</strong></a></p>
+- ช่องเลือกภาพต้นฉบับและเป้าหมาย พร้อมภาพตัวอย่าง
+- สถานะภาษาไทยอิงขั้นตอนประมวลผลจริง และแถบนับขั้นตอนที่สำเร็จ
+- ตัวเลข/แถบ CPU และ GPU รวมทั้งเครื่องจาก Windows Performance Counters
+- เปิดผลลัพธ์เต็มภาพ ซูม และส่งออก PNG
+- แยก worker process เพื่อให้ GUI ยังตอบสนองระหว่างทำงาน
 
-  <!-- 🎬 Showcase GIF -->
-  <p><img src="./assets/docs/showcase2.gif" alt="LivePortrait showcase GIF"></p>
-  <p>🔥 For more results, visit our <a href="https://liveportrait.github.io/" target="_blank"><strong>homepage</strong></a> 🔥</p>
+## User Flow
 
-</div>
-<!-- ===== /LivePortrait ===== -->
+![ขั้นตอนใช้งานโปรแกรมตั้งแต่เลือกภาพจนบันทึกผล](docs/readme_assets/user_flow.png)
 
+1. เปิดโปรแกรม แล้วเลือกภาพ A และ B ที่เห็นใบหน้าชัดเจน
+2. กด **เริ่มสลับใบหน้า** โปรแกรมอ่านภาพ ตรวจใบหน้า จัดแนว และสร้างหน้าด้วย HyperSwap 256
+3. ระบบแยกส่วนใบหน้า ประมาณ mask กรอบแว่น ปรับสีผิว และผสานกลับเข้า B
+4. ตรวจผลอัตโนมัติและแสดงภาพ สามารถกด **ดูภาพเต็ม** และ **บันทึกภาพ** ได้
 
-## 🔥 Updates
-- **`2025/06/01`**: 🌍 Over the past year, **LivePortrait** has 🚀 become an efficient portrait-animation (humans, cats and dogs) solution adopted by major video platforms—Kuaishou, Douyin, Jianying, WeChat Channels—as well as numerous startups and creators. 🎉
-- **`2025/01/01`**: 🐶 We updated a new version of the Animals model with more data, see [**here**](./assets/docs/changelog/2025-01-01.md).
-- **`2024/10/18`**: ❗ We have updated the versions of the `transformers` and `gradio` libraries to avoid security vulnerabilities. Details [here](https://github.com/KlingTeam/LivePortrait/pull/421/files).
-- **`2024/08/29`**: 📦 We update the Windows [one-click installer](https://huggingface.co/cleardusk/LivePortrait-Windows/blob/main/LivePortrait-Windows-v20240829.zip) and support auto-updates, see [changelog](https://huggingface.co/cleardusk/LivePortrait-Windows#20240829).
-- **`2024/08/19`**: 🖼️ We support **image driven mode** and **regional control**. For details, see [**here**](./assets/docs/changelog/2024-08-19.md).
-- **`2024/08/06`**: 🎨 We support **precise portrait editing** in the Gradio interface, inspired by [ComfyUI-AdvancedLivePortrait](https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait). See [**here**](./assets/docs/changelog/2024-08-06.md).
-- **`2024/08/05`**: 📦 Windows users can now download the [one-click installer](https://huggingface.co/cleardusk/LivePortrait-Windows/blob/main/LivePortrait-Windows-v20240806.zip) for Humans mode and **Animals mode** now! For details, see [**here**](./assets/docs/changelog/2024-08-05.md).
-- **`2024/08/02`**: 😸 We released a version of the **Animals model**, along with several other updates and improvements. Check out the details [**here**](./assets/docs/changelog/2024-08-02.md)!
-- **`2024/07/25`**: 📦 Windows users can now download the package from [HuggingFace](https://huggingface.co/cleardusk/LivePortrait-Windows/tree/main). Simply unzip and double-click `run_windows.bat` to enjoy!
-- **`2024/07/24`**: 🎨 We support pose editing for source portraits in the Gradio interface. We’ve also lowered the default detection threshold to increase recall. [Have fun](assets/docs/changelog/2024-07-24.md)!
-- **`2024/07/19`**: ✨ We support 🎞️ **portrait video editing (aka v2v)**! More to see [here](assets/docs/changelog/2024-07-19.md).
-- **`2024/07/17`**: 🍎 We support macOS with Apple Silicon, modified from [jeethu](https://github.com/jeethu)'s PR [#143](https://github.com/KlingTeam/LivePortrait/pull/143).
-- **`2024/07/10`**: 💪 We support audio and video concatenating, driving video auto-cropping, and template making to protect privacy. More to see [here](assets/docs/changelog/2024-07-10.md).
-- **`2024/07/09`**: 🤗 We released the [HuggingFace Space](https://huggingface.co/spaces/KlingTeam/LivePortrait), thanks to the HF team and [Gradio](https://github.com/gradio-app/gradio)!
-- **`2024/07/04`**: 😊 We released the initial version of the inference code and models. Continuous updates, stay tuned!
-- **`2024/07/04`**: 🔥 We released the [homepage](https://liveportrait.github.io) and technical report on [arXiv](https://arxiv.org/pdf/2407.03168).
+หากไม่พบใบหน้าหรือประมวลผลไม่สำเร็จ โปรแกรมจะแสดงข้อผิดพลาดและให้เลือกภาพ/ลองใหม่ โดยไม่แสดงผลเก่าเป็นผลของงานใหม่
 
+## ตัวอย่างการสลับใบหน้า
 
+แต่ละแถวแสดง **A ต้นฉบับ → B เป้าหมาย → ผลลัพธ์ HyperSwap 256** เป็นผลการรันทดลองจริงด้วย `input_sampling=area` ไม่ใช้ face restoration เพิ่มความคมภายหลัง ภาพคอลัมน์ขวาเป็นภาพที่ผ่านการสลับใบหน้าแล้ว
 
-## Introduction 📖
-This repo, named **LivePortrait**, contains the official PyTorch implementation of our paper [LivePortrait: Efficient Portrait Animation with Stitching and Retargeting Control](https://arxiv.org/pdf/2407.03168).
-We are actively updating and improving this repository. If you find any bugs or have suggestions, welcome to raise issues or submit pull requests (PR) 💖.
+### ตัวอย่างที่ 1 — เป้าหมายสวมแว่น
 
-## Getting Started 🏁
-### 1. Clone the code and prepare the environment 🛠️
+![ตัวอย่างที่ 1: ภาพต้นฉบับ ภาพเป้าหมายสวมแว่น และผลสลับใบหน้า](docs/readme_assets/showcase_glasses.png)
 
-> [!Note]
-> Make sure your system has [`git`](https://git-scm.com/), [`conda`](https://anaconda.org/anaconda/conda), and [`FFmpeg`](https://ffmpeg.org/download.html) installed. For details on FFmpeg installation, see [**how to install FFmpeg**](assets/docs/how-to-install-ffmpeg.md).
+### ตัวอย่างที่ 2 — เปรียบเทียบกับเป้าหมายอีกภาพ
 
-```bash
-git clone https://github.com/KlingTeam/LivePortrait
-cd LivePortrait
+![ตัวอย่างที่ 2: การเปลี่ยนต้นฉบับและภาพเป้าหมายที่มีเลนส์ใส](docs/readme_assets/showcase_clear_lenses.png)
 
-# create env using conda
-conda create -n LivePortrait python=3.10
-conda activate LivePortrait
+ตัวอย่างแสดงพฤติกรรมของรุ่นทดลอง ไม่ใช่การรับรองความแม่นยำทุกภาพ โดยเฉพาะกรอบบาง สะพานแว่น แสงสะท้อน และรายละเอียดตา/ปากยังมีข้อจำกัด
+
+## โมเดลที่ใช้
+
+| โมเดล / น้ำหนัก | ใช้ทำอะไร | อุปกรณ์ที่โค้ดเลือก |
+|---|---|---|
+| **HyperSwap 1a 256** — `hyperswap_1a_256.onnx` | สร้างใบหน้าจาก identity ของ A และภาพใบหน้า B ที่ความละเอียด native 256×256 | ONNX Runtime **CPU** |
+| **SCRFD** — `det_10g.onnx` | ตรวจตำแหน่งใบหน้าและ 5 keypoints | ONNX Runtime **CPU** |
+| **2D106** — `2d106det.onnx` | หาจุดใบหน้า 106 จุดสำหรับจัด crop และขนาด mask | ONNX Runtime **CPU** |
+| **3D68** — `1k3d68.onnx` | ประมาณจุดใบหน้าและท่าศีรษะสำหรับตรวจผล | ONNX Runtime **CPU** |
+| **ArcFace R50** — `w600k_r50.onnx` | สกัด identity embedding 512 มิติ และใช้วัด similarity | ONNX Runtime **CPU** |
+| **BiSeNet19 / ResNet18** — `79999_iter.pth` | แยกผิว ตา ปาก แว่น ผม และส่วนประกอบใบหน้า | PyTorch **CUDA เมื่อพร้อม / CPU fallback** |
+
+SCRFD, 2D106, 3D68 และ ArcFace อยู่ในแพ็กเกจ **InsightFace buffalo_l** ส่วน ResNet18 เป็น backbone ของ BiSeNet เส้นทาง GUI ปัจจุบันใช้ HyperSwap แทนการเรียก LivePortrait 3D animation
+
+## เทคโนโลยีและแนวทางประมวลผล
+
+| เทคโนโลยี | บทบาท |
+|---|---|
+| Python + PySide6 / Qt Widgets | GUI, เลือกไฟล์, preview และ viewer |
+| QProcess + JSON Lines | สื่อสารสถานะระหว่าง GUI และ worker |
+| PyTorch / torchvision | BiSeNet inference และ backbone |
+| ONNX Runtime + InsightFace | HyperSwap, detection, landmarks และ recognition |
+| OpenCV + NumPy + scikit-image | alignment, area sampling, morphology, LAB และ alpha compositing |
+| ctypes + Windows PDH + QThread | อ่าน CPU/GPU/dedicated memory แยกจากงานสร้างภาพ |
+| PNG + JSON | บันทึกผล mask, config, hash, diagnostics และ debug |
+
+Pipeline ใช้ similarity alignment, การย่อแบบ supersampling/INTER_AREA, semantic mask, smoothstep feather และการปรับ LAB เฉพาะผิว จากนั้น sample ภาพ native256 กลับเข้า B โดยตรงเพื่อลดการ resample ซ้ำ
+
+**CPU/GPU ที่แสดงเป็นการใช้รวมทั้งเครื่อง ไม่ใช่เฉพาะโปรแกรมนี้** และอาจต่างจาก Task Manager ในแต่ละจังหวะสุ่ม แม้เครื่องมี CUDA ก็ไม่ได้หมายความว่า HyperSwap รัน GPU: provider ที่โค้ดเลือกสำหรับ ONNX ยังเป็น CPU
+
+## System Architecture
+
+[![System Architecture ของ GUI และ HyperSwap256](docs/readme_assets/system_architecture.png)](https://www.canva.com/design/DAHY3NJ8-zg/edit)
+
+**[เปิดแผนภาพฉบับละเอียดบน Canva Whiteboard](https://www.canva.com/design/DAHY3NJ8-zg/edit)** — 21 บล็อก ครอบคลุม GUI/worker, การเชื่อมโมเดล, tensor shapes, สูตร mask/สี/คะแนน และตำแหน่ง CPU/GPU ใช้โลโก้เทคโนโลยีจาก [SVGL](https://svgl.app/)
+
+HyperSwap มี learned mask ที่ผสมภาพกับ B **ภายในโมเดลอยู่แล้ว** ก่อนส่ง output ออกมา จากนั้นโปรเจคจึงผสมด้วย semantic mask อีกชั้นหนึ่ง จึงควรแยกสองส่วนนี้เมื่อวิเคราะห์คุณภาพ
+
+## เริ่มใช้งานบน Windows
+
+โปรแกรมยังใช้ Python environment และน้ำหนักโมเดลแยก ไม่ใช่ standalone EXE และไม่รวม `venv`, `.onnx`, `.pth` หรือรูปทดสอบต้นฉบับไว้ใน repository นี้
+
+สำหรับเครื่องที่จัดเตรียม ML environment และโมเดลครบแล้ว รันจากโฟลเดอร์โปรเจค:
+
+```powershell
+.\venv\Scripts\python.exe -m pip install -r requirements_gui.txt
+.\venv\Scripts\python.exe run_faceswap_gui.py
 ```
 
-#### For Linux 🐧 or Windows 🪟 Users
-[X-Pose](https://github.com/IDEA-Research/X-Pose), required by Animals mode, is a dependency that needs to be installed. The step of `Check your CUDA versions` is **optional** if you only want to run Humans mode.
+หรือดับเบิลคลิก **`เปิดโปรแกรม Face Swap.bat`** อ่านวิธีใช้เพิ่มเติมที่ [คู่มือ GUI](faceswap_gui/README.md)
 
-<details>
-  <summary>Check your CUDA versions</summary>
+### น้ำหนักที่ต้องเตรียม
 
-  Firstly, check your current CUDA version by:
-  ```bash
-  nvcc -V # example versions: 11.1, 11.8, 12.1, etc.
-  ```
+| รายการ | ตำแหน่ง / แหล่งที่มา |
+|---|---|
+| HyperSwap 1a 256 | `pretrained_weights/hyperswap/hyperswap_1a_256.onnx` จาก [FaceFusion assets](https://github.com/facefusion/facefusion-assets/releases/tag/models-3.3.0) |
+| buffalo_l 4 โมเดลข้างต้น | `%USERPROFILE%/.insightface/models/buffalo_l/` จาก [InsightFace model zoo](https://github.com/deepinsight/insightface/tree/master/python-package#model-zoo) |
+| BiSeNet parser | `res/cp/79999_iter.pth` จาก [face-parsing.PyTorch](https://github.com/zllrunning/face-parsing.PyTorch#training) |
+| ResNet18 backbone cache | `checkpoints/resnet18-5c106cde.pth` ภายใต้ cache ที่ `torch.hub.get_dir()` คืนค่า |
 
-  Then, install the corresponding torch version. Here are examples for different CUDA versions. Visit the [PyTorch Official Website](https://pytorch.org/get-started/previous-versions) for installation commands if your CUDA version is not listed:
-  ```bash
-  # for CUDA 11.1
-  pip install torch==1.10.1+cu111 torchvision==0.11.2 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
-  # for CUDA 11.8
-  pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu118
-  # for CUDA 12.1
-  pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121
-  # ...
-  ```
+ดาวน์โหลด HyperSwap พร้อมตรวจ hash และบันทึก metadata:
 
-  **Note**: On Windows systems, some higher versions of CUDA (such as 12.4, 12.6, etc.) may lead to unknown issues. You may consider downgrading CUDA to version 11.8 for stability. See the [downgrade guide](https://github.com/dimitribarbot/sd-webui-live-portrait/blob/main/assets/docs/how-to-install-xpose.md#cuda-toolkit-118) by [@dimitribarbot](https://github.com/dimitribarbot).
-</details>
-
-
-Finally, install the remaining dependencies:
-```bash
-pip install -r requirements.txt
+```powershell
+.\venv\Scripts\python.exe experiments/round3_20261024/download_candidate.py
 ```
 
-#### For macOS  with Apple Silicon Users
-The [X-Pose](https://github.com/IDEA-Research/X-Pose) dependency does not support macOS, so you can skip its installation. While Humans mode works as usual, Animals mode is not supported. Use the provided requirements file for macOS with Apple Silicon:
-```bash
-# for macOS with Apple Silicon users
-pip install -r requirements_macOS.txt
+เครื่องใหม่ต้องติดตั้ง PyTorch/torchvision, ONNX Runtime, InsightFace และ dependencies ของ pipeline เพิ่มด้วย `requirements_gui.txt` ติดตั้งเฉพาะส่วน GUI ไม่ใช่ตัวติดตั้ง ML environment ทั้งหมด
+
+### ทดสอบผ่าน CLI แบบเดียวกับ GUI
+
+```powershell
+.\venv\Scripts\python.exe run_3d_faceswap.py -s "path/to/source.jpg" -t "path/to/target.jpg" -o "outputs/result.png" --backend hyperswap --input-sampling area --debug
 ```
 
-### 2. Download pretrained weights 📥
+ผลจาก GUI เก็บใน `outputs/gui/<วันเวลา>_<รหัสงาน>/` มี PNG, JSON, mask, debug และ log สำหรับตรวจย้อนหลัง
 
-The easiest way to download the pretrained weights is from HuggingFace:
-```bash
-# !pip install -U "huggingface_hub[cli]"
-huggingface-cli download KlingTeam/LivePortrait --local-dir pretrained_weights --exclude "*.git*" "README.md" "docs"
+## การทดสอบและขอบเขต
+
+```powershell
+.\venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-If you cannot access to Huggingface, you can use [hf-mirror](https://hf-mirror.com/) to download:
-```bash
-# !pip install -U "huggingface_hub[cli]"
-export HF_ENDPOINT=https://hf-mirror.com
-huggingface-cli download KlingTeam/LivePortrait --local-dir pretrained_weights --exclude "*.git*" "README.md" "docs"
-```
+ผลตรวจ ณ 24 ต.ค. 2026: unit/regression ผ่าน **25/25**, GUI integration checks **49/49** และภาพ GUI ตรงกับ CLI ทั้ง **3 คู่ที่ทดสอบ** เมื่อใช้ config เดียวกัน ข้อมูลนี้ยืนยันการทำงานของโปรแกรม ไม่ใช่ความสมจริงหรือความแม่นยำของตัวตนในภาพทั้งหมด
 
-Alternatively, you can download all pretrained weights from [Google Drive](https://drive.google.com/drive/folders/1UtKgzKjFAOmZkhNK-OYT0caJ_w2XAnib) or [Baidu Yun](https://pan.baidu.com/s/1MGctWmNla_vZxDbEp2Dtzw?pwd=z5cn). Unzip and place them in `./pretrained_weights`.
+JSON แยก `quality.project_gate_pass` ออกจาก `visual_acceptance` ที่ยังต้องให้คนตรวจ ค่าความคล้ายไม่ใช่เปอร์เซ็นต์ความแม่นยำ GUI รุ่นนี้เลือกใบหน้าที่มีพื้นที่มากที่สุด และยังไม่รองรับเลือกบุคคลจากภาพหลายคนบนหน้าจอ
 
-Ensuring the directory structure is as or contains [**this**](assets/docs/directory-structure.md).
+## เครดิตและสิทธิ์การใช้งาน
 
-### 3. Inference 🚀
+| เจ้าของผลงาน / โปรเจค | ส่วนที่นำมาใช้หรือต่อยอด |
+|---|---|
+| [Kuaishou / KwaiVGI — LivePortrait](https://github.com/KwaiVGI/LivePortrait) | repository ต้นทางและ utility จัด crop/พิกัด |
+| [Henry Ruhs / FaceFusion Labs — HyperSwap](https://github.com/facefusion/facefusion-labs/tree/master/hyperswap) | โมเดลสลับใบหน้า HyperSwap; [ResearchRAIL-MS](https://github.com/facefusion/facefusion-labs/blob/master/hyperswap/LICENSE.md) |
+| [DeepInsight — InsightFace](https://github.com/deepinsight/insightface) | SCRFD, landmarks และ ArcFace/buffalo_l |
+| [zllrunning — face-parsing.PyTorch](https://github.com/zllrunning/face-parsing.PyTorch) และ [ทีม BiSeNet](https://github.com/CoinCheung/BiSeNet) | implementation/น้ำหนัก face parser และแนวทาง BiSeNet |
+| [PyTorch / torchvision](https://pytorch.org/) | framework และ ResNet18 backbone |
+| [Qt for Python](https://www.qt.io/qt-for-python), [OpenCV](https://opencv.org/), [NumPy](https://numpy.org/), [ONNX Runtime](https://onnxruntime.ai/) | เทคโนโลยีหลักของโปรแกรม |
 
-#### Fast hands-on (humans) 👤
-```bash
-# For Linux and Windows users
-python inference.py
+คง [LICENSE ของ repository ต้นทาง](LICENSE) ไว้ น้ำหนักโมเดลมีเงื่อนไขแยกจาก license ของโค้ด โดย [InsightFace ระบุข้อจำกัดของ pretrained models สำหรับงานวิจัยที่ไม่ใช่เชิงพาณิชย์](https://github.com/deepinsight/insightface#license) และ HyperSwap ใช้ ResearchRAIL-MS ควรตรวจเงื่อนไขจากเจ้าของแต่ละส่วนก่อนนำไปใช้งานหรือแจกจ่าย
 
-# For macOS users with Apple Silicon (Intel is not tested). NOTE: this maybe 20x slower than RTX 4090
-PYTORCH_ENABLE_MPS_FALLBACK=1 python inference.py
-```
-
-If the script runs successfully, you will get an output mp4 file named `animations/s6--d0_concat.mp4`. This file includes the following results: driving video, input image or video, and generated result.
-
-<p align="center">
-  <img src="./assets/docs/inference.gif" alt="image">
-</p>
-
-Or, you can change the input by specifying the `-s` and `-d` arguments:
-
-```bash
-# source input is an image
-python inference.py -s assets/examples/source/s9.jpg -d assets/examples/driving/d0.mp4
-
-# source input is a video ✨
-python inference.py -s assets/examples/source/s13.mp4 -d assets/examples/driving/d0.mp4
-
-# more options to see
-python inference.py -h
-```
-
-#### Fast hands-on (animals) 🐱🐶
-Animals mode is ONLY tested on Linux and Windows with NVIDIA GPU.
-
-You need to build an OP named `MultiScaleDeformableAttention` first (refer to the <a href="#for-linux--or-windows--users">Check your CUDA versions</a> if needed), which is used by [X-Pose](https://github.com/IDEA-Research/X-Pose), a general keypoint detection framework.
-
-```bash
-cd src/utils/dependencies/XPose/models/UniPose/ops
-python setup.py build install
-cd - # equal to cd ../../../../../../../
-```
-
-Then
-```bash
-python inference_animals.py -s assets/examples/source/s39.jpg -d assets/examples/driving/wink.pkl --driving_multiplier 1.75 --no_flag_stitching
-```
-If the script runs successfully, you will get an output mp4 file named `animations/s39--wink_concat.mp4`.
-<p align="center">
-  <img src="./assets/docs/inference-animals.gif" alt="image">
-</p>
-
-#### Driving video auto-cropping 📢📢📢
-> [!IMPORTANT]
-> To use your own driving video, we **recommend**: ⬇️
-> - Crop it to a **1:1** aspect ratio (e.g., 512x512 or 256x256 pixels), or enable auto-cropping by `--flag_crop_driving_video`.
-> - Focus on the head area, similar to the example videos.
-> - Minimize shoulder movement.
-> - Make sure the first frame of driving video is a frontal face with **neutral expression**.
-
-Below is an auto-cropping case by `--flag_crop_driving_video`:
-```bash
-python inference.py -s assets/examples/source/s9.jpg -d assets/examples/driving/d13.mp4 --flag_crop_driving_video
-```
-
-If you find the results of auto-cropping is not well, you can modify the `--scale_crop_driving_video`, `--vy_ratio_crop_driving_video` options to adjust the scale and offset, or do it manually.
-
-#### Motion template making
-You can also use the auto-generated motion template files ending with `.pkl` to speed up inference, and **protect privacy**, such as:
-```bash
-python inference.py -s assets/examples/source/s9.jpg -d assets/examples/driving/d5.pkl # portrait animation
-python inference.py -s assets/examples/source/s13.mp4 -d assets/examples/driving/d5.pkl # portrait video editing
-```
-
-### 4. Gradio interface 🤗
-
-We also provide a Gradio <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a> interface for a better experience, just run by:
-
-```bash
-# For Linux and Windows users (and macOS with Intel??)
-python app.py # humans mode
-
-# For macOS with Apple Silicon users, Intel not supported, this maybe 20x slower than RTX 4090
-PYTORCH_ENABLE_MPS_FALLBACK=1 python app.py # humans mode
-```
-
-We also provide a Gradio interface of animals mode, which is only tested on Linux with NVIDIA GPU:
-```bash
-python app_animals.py # animals mode 🐱🐶
-```
-
-You can specify the `--server_port`, `--share`, `--server_name` arguments to satisfy your needs!
-
-🚀 We also provide an acceleration option `--flag_do_torch_compile`. The first-time inference triggers an optimization process (about one minute), making subsequent inferences 20-30% faster. Performance gains may vary with different CUDA versions.
-```bash
-# enable torch.compile for faster inference
-python app.py --flag_do_torch_compile
-```
-**Note**: This method is not supported on Windows and macOS.
-
-**Or, try it out effortlessly on [HuggingFace](https://huggingface.co/spaces/KlingTeam/LivePortrait) 🤗**
-
-### 5. Inference speed evaluation 🚀🚀🚀
-We have also provided a script to evaluate the inference speed of each module:
-
-```bash
-# For NVIDIA GPU
-python speed.py
-```
-
-The results are [**here**](./assets/docs/speed.md).
-
-## Community Resources 🤗
-
-Discover the invaluable resources contributed by our community to enhance your LivePortrait experience.
-
-
-### Community-developed Projects
-
-| Repo | Description | Author / Links |
-|------|------|--------|
-| [**AVTR-1**](https://github.com/avaturn-live/avtr-1) | Real-time conversational talking-head model using dyadic audio conditioning and a LivePortrait-style portrait-warping renderer. | [@avaturn-live](https://github.com/avaturn-live) |
-| [**ditto-talkinghead**](https://github.com/antgroup/ditto-talkinghead) | Real-time audio-driven talking head. | [ArXiv](https://arxiv.org/abs/2411.19509), [Homepage](https://digital-avatar.github.io/ai/Ditto/)  |
-| [**FasterLivePortrait**](https://github.com/warmshao/FasterLivePortrait) | Faster real-time version using TensorRT. | [@warmshao](https://github.com/warmshao) |
-| [**AdvancedLivePortrait-WebUI**](https://github.com/jhj0517/AdvancedLivePortrait-WebUI) | Dedicated gradio based WebUI started from [ComfyUI-AdvancedLivePortrait](https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait). | [@jhj0517](https://github.com/jhj0517) |
-| [**FacePoke**](https://github.com/jbilcke-hf/FacePoke) | A real-time head transformation app, controlled by your mouse! | [@jbilcke-hf](https://github.com/jbilcke-hf) |
-| [**FaceFusion**](https://github.com/facefusion/facefusion) | FaceFusion 3.0 integregates LivePortrait as `expression_restorer` and `face_editor` processors. | [@henryruhs](https://github.com/henryruhs) |
-| [**sd-webui-live-portrait**](https://github.com/dimitribarbot/sd-webui-live-portrait) | WebUI extension of LivePortrait, adding atab to the original Stable Diffusion WebUI to benefit from LivePortrait features. | [@dimitribarbot](https://github.com/dimitribarbot) |
-| [**ComfyUI-LivePortraitKJ**](https://github.com/kijai/ComfyUI-LivePortraitKJ) | A ComfyUI node to use LivePortrait, with MediaPipe as as an alternative to Insightface. | [@kijai](https://github.com/kijai) |
-| [**ComfyUI-AdvancedLivePortrait**](https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait) | A faster ComfyUI node with real-time preview that has inspired many other community-developed tools and projects. | [@PowerHouseMan](https://github.com/PowerHouseMan) |
-| [**comfyui-liveportrait**](https://github.com/shadowcz007/comfyui-liveportrait) | A ComfyUI node to use LivePortrait, supporting multi-faces, expression interpolation etc, with a [tutorial](https://www.bilibili.com/video/BV1JW421R7sP). | [@shadowcz007](https://github.com/shadowcz007) |
-
-### Playgrounds, 🤗 HuggingFace Spaces and Others
-- [FacePoke Space](https://huggingface.co/spaces/jbilcke-hf/FacePoke)
-- [Expression Editor Space](https://huggingface.co/spaces/fffiloni/expression-editor)
-- [Expression Editor Replicate](https://replicate.com/fofr/expression-editor)
-- [Face Control Realtime Demo](https://fal.ai/demos/face-control) on FAL
-- [Replicate Playground](https://replicate.com/fofr/live-portrait)
-- Nuke can use LivePortrait through CompyUI node, details [here](https://x.com/bilawalsidhu/status/1837349806475276338)
-- LivePortrait lives on [Poe](https://poe.com/LivePortrait)
-
-### Video Tutorials
-- [Workflow of LivePortrait Video to Video](https://youtu.be/xfzK_6cTs58?si=aYjgypeJBkhc46VL) by [@curiousrefuge](https://www.youtube.com/@curiousrefuge)
-- [Google Colab tutorial](https://youtu.be/59Y9ePAXTp0?si=KzEWhklBlporW7D8) by [@Planet Ai](https://www.youtube.com/@planetai217)
-- [Paper reading](https://youtu.be/fD0P6UWSu8I?si=Vn5wxUa8qSu1jv4l) by [@TwoMinutePapers](https://www.youtube.com/@TwoMinutePapers)
-- [ComfyUI Advanced LivePortrait](https://youtu.be/q0Vf-ZZsbzI?si=nbs3npleH-dVCt28) by [TutoView](https://www.youtube.com/@TutoView)
-- [LivePortarit exploration](https://www.youtube.com/watch?v=vsvlbTEqgXQ) and [A deep dive into LivePortrait](https://youtu.be/cucaEEDYmsw?si=AtPaDWc5G-a4E8dD) by [TheoreticallyMedia](https://www.youtube.com/@TheoreticallyMedia)
-- [LivePortrait hands-on tutorial](https://www.youtube.com/watch?v=uyjSTAOY7yI) by [@AI Search](https://www.youtube.com/@theAIsearch)
-- [ComfyUI tutorial](https://www.youtube.com/watch?v=8-IcDDmiUMM) by [@Sebastian Kamph](https://www.youtube.com/@sebastiankamph)
-- A [tutorial](https://www.bilibili.com/video/BV1cf421i7Ly) on BiliBili
-
-And so MANY amazing contributions from our community, too many to list them all 💖
-
-## Acknowledgements 💐
-We would like to thank the contributors of [FOMM](https://github.com/AliaksandrSiarohin/first-order-model), [Open Facevid2vid](https://github.com/zhanglonghao1992/One-Shot_Free-View_Neural_Talking_Head_Synthesis), [SPADE](https://github.com/NVlabs/SPADE), [InsightFace](https://github.com/deepinsight/insightface) and [X-Pose](https://github.com/IDEA-Research/X-Pose) repositories, for their open research and contributions.
-
-## Ethics Considerations 🛡️
-Portrait animation technologies come with social risks, particularly the potential for misuse in creating deepfakes. To mitigate these risks, it’s crucial to follow ethical guidelines and adopt responsible usage practices. At present, the synthesized results contain visual artifacts that may help in detecting deepfakes. Please note that we do not assume any legal responsibility for the use of the results generated by this project.
-
-## Citation 💖
-If you find LivePortrait useful for your project or research, welcome to 🌟 this repo and cite our work using the following BibTeX:
-```bibtex
-@article{guo2024liveportrait,
-  title   = {LivePortrait: Efficient Portrait Animation with Stitching and Retargeting Control},
-  author  = {Guo, Jianzhu and Zhang, Dingyun and Liu, Xiaoqiang and Zhong, Zhizhou and Zhang, Yuan and Wan, Pengfei and Zhang, Di},
-  journal = {arXiv preprint arXiv:2407.03168},
-  year    = {2024}
-}
-```
-
-*Long live in arXiv.*
-
-## Contact 📧
-[**Jianzhu Guo (郭建珠)**](https://guojianzhu.com); **guojianzhu1994@gmail.com**
-
-## Star History 🌟
-<details>
-  <summary>Click to view Star chart</summary>
-  <p align="center">
-    <a href="https://www.star-history.com/#KlingAIResearch/LivePortrait&Timeline" target="_blank">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=KlingAIResearch/LivePortrait&type=Timeline&theme=dark" />
-        <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=KlingAIResearch/LivePortrait&type=Timeline" />
-        <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=KlingAIResearch/LivePortrait&type=Timeline" width="90%" />
-      </picture>
-    </a>
-  </p>
-</details>
+ใช้ภาพที่มีสิทธิ์และได้รับความยินยอมจากเจ้าของภาพ ระบุเมื่อเผยแพร่ว่าเป็นภาพที่ผ่านการสลับใบหน้า

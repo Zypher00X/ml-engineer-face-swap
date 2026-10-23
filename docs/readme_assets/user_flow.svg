@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="635mm" height="275.167mm"
+ viewBox="0 0 1800 780"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" baseProfile="tiny">
+<title>Qt SVG Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="#101419" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
+font-family="Sans Serif" font-size="9" font-weight="400" font-style="normal" 
+>
+<rect x="0" y="0" width="1800" height="780"/>
+</g>
+
+<g fill="none" stroke="#e8f0f8" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="31" font-weight="700" font-style="normal" 
+>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="593" y="67.5" font-family="Leelawadee UI" font-size="31" font-weight="700" font-style="normal" 
+ >ML engineer Project face swap | User Flow</text>
+</g>
+
+<g fill="none" stroke="#9db3ca" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="400" font-style="normal" 
+>
+<text fill="#9db3ca" fill-opacity="1" stroke="none" xml:space="preserve" x="687.5" y="120.5" font-family="Leelawadee UI" font-size="19" font-weight="400" font-style="normal" 
+ >เลือกภาพสองช่อง แล้วรอผลจาก </text>
+<text fill="#9db3ca" fill-opacity="1" stroke="none" xml:space="preserve" x="918.5" y="120.5" font-family="Leelawadee UI" font-size="19" font-weight="400" font-style="normal" 
+ >HyperSwap 256 </text>
+<text fill="#9db3ca" fill-opacity="1" stroke="none" xml:space="preserve" x="1053.5" y="120.5" font-family="Leelawadee UI" font-size="19" font-weight="400" font-style="normal" 
+ >ในเครื่อง</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#34485e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M70,191 C70,182.163 77.1634,175 86,175 L424,175 C432.837,175 440,182.163 440,191 L440,349 C440,357.837 432.837,365 424,365 L86,365 C77.1634,365 70,357.837 70,349 L70,191"/>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#49d4d7" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+>
+<text fill="#49d4d7" fill-opacity="1" stroke="none" xml:space="preserve" x="244" y="213" font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+ >01</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#e8f0f8" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="191" y="264.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >เปิดโปรแกรม</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#a5b9ce" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="175" y="324.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >GUI </text>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="205" y="324.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >โทนดำบน </text>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="270" y="324.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >Windows</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#34485e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M500,191 C500,182.163 507.163,175 516,175 L854,175 C862.837,175 870,182.163 870,191 L870,349 C870,357.837 862.837,365 854,365 L516,365 C507.163,365 500,357.837 500,349 L500,191"/>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#49d4d7" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+>
+<text fill="#49d4d7" fill-opacity="1" stroke="none" xml:space="preserve" x="674" y="213" font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+ >02</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#e8f0f8" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="608" y="264.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >เลือกต้นฉบับ </text>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="745" y="264.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >A</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#a5b9ce" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="628.5" y="324.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >ใช้ตัวตนจากภาพนี้</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#34485e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M930,191 C930,182.163 937.163,175 946,175 L1284,175 C1292.84,175 1300,182.163 1300,191 L1300,349 C1300,357.837 1292.84,365 1284,365 L946,365 C937.163,365 930,357.837 930,349 L930,191"/>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#49d4d7" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+>
+<text fill="#49d4d7" fill-opacity="1" stroke="none" xml:space="preserve" x="1104" y="213" font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+ >03</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#e8f0f8" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="1031.5" y="264.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >เลือกเป้าหมาย </text>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="1183.5" y="264.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >B</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#a5b9ce" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="1055.5" y="324.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >ใช้ท่าศีรษะและสีหน้า</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#34485e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M1360,191 C1360,182.163 1367.16,175 1376,175 L1714,175 C1722.84,175 1730,182.163 1730,191 L1730,349 C1730,357.837 1722.84,365 1714,365 L1376,365 C1367.16,365 1360,357.837 1360,349 L1360,191"/>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#49d4d7" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+>
+<text fill="#49d4d7" fill-opacity="1" stroke="none" xml:space="preserve" x="1534" y="213" font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+ >04</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#e8f0f8" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="1471" y="264.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >เริ่มสลับใบหน้า</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#a5b9ce" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="1478" y="324.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >ล็อก </text>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="1508" y="324.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >input </text>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="1548" y="324.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >ระหว่างงาน</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#34485e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M1360,466 C1360,457.163 1367.16,450 1376,450 L1714,450 C1722.84,450 1730,457.163 1730,466 L1730,624 C1730,632.837 1722.84,640 1714,640 L1376,640 C1367.16,640 1360,632.837 1360,624 L1360,466"/>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#49d4d7" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+>
+<text fill="#49d4d7" fill-opacity="1" stroke="none" xml:space="preserve" x="1534" y="488" font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+ >05</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#e8f0f8" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="1484.5" y="539.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >ดูสถานะจริง</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#a5b9ce" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="1453" y="599.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >อ่านภาพ / วิเคราะห์ / สร้างหน้า</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#34485e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M930,466 C930,457.163 937.163,450 946,450 L1284,450 C1292.84,450 1300,457.163 1300,466 L1300,624 C1300,632.837 1292.84,640 1284,640 L946,640 C937.163,640 930,632.837 930,624 L930,466"/>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#49d4d7" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+>
+<text fill="#49d4d7" fill-opacity="1" stroke="none" xml:space="preserve" x="1104" y="488" font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+ >06</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#e8f0f8" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="1023" y="539.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >ผสานและตรวจผล</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#a5b9ce" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="1030.5" y="599.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >mask / </text>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="1081.5" y="599.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >สีผิว / </text>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="1121.5" y="599.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >diagnostics</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#34485e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M500,466 C500,457.163 507.163,450 516,450 L854,450 C862.837,450 870,457.163 870,466 L870,624 C870,632.837 862.837,640 854,640 L516,640 C507.163,640 500,632.837 500,624 L500,466"/>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#49d4d7" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+>
+<text fill="#49d4d7" fill-opacity="1" stroke="none" xml:space="preserve" x="674" y="488" font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+ >07</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#e8f0f8" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="614" y="539.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >ดูภาพผลลัพธ์</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#a5b9ce" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="622" y="599.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >เปิดเต็มภาพและซูมได้</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#34485e" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M70,466 C70,457.163 77.1634,450 86,450 L424,450 C432.837,450 440,457.163 440,466 L440,624 C440,632.837 432.837,640 424,640 L86,640 C77.1634,640 70,632.837 70,624 L70,466"/>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#49d4d7" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+>
+<text fill="#49d4d7" fill-opacity="1" stroke="none" xml:space="preserve" x="244" y="488" font-family="Leelawadee UI" font-size="19" font-weight="700" font-style="normal" 
+ >08</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#e8f0f8" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="194" y="539.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >บันทึก </text>
+<text fill="#e8f0f8" fill-opacity="1" stroke="none" xml:space="preserve" x="265" y="539.5" font-family="Leelawadee UI" font-size="24" font-weight="700" font-style="normal" 
+ >PNG</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#a5b9ce" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<text fill="#a5b9ce" fill-opacity="1" stroke="none" xml:space="preserve" x="196" y="599.5" font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+ >เลือกตำแหน่งจัดเก็บ</text>
+</g>
+
+<g fill="#19232f" fill-opacity="1" stroke="#36c9d0" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="448,270 492,270 " />
+</g>
+
+<g fill="#36c9d0" fill-opacity="1" stroke="#36c9d0" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M492,270 L480,264 L480,276 L492,270"/>
+<polyline fill="none" vector-effect="none" points="878,270 922,270 " />
+</g>
+
+<g fill="#36c9d0" fill-opacity="1" stroke="#36c9d0" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M922,270 L910,264 L910,276 L922,270"/>
+<polyline fill="none" vector-effect="none" points="1308,270 1352,270 " />
+</g>
+
+<g fill="#36c9d0" fill-opacity="1" stroke="#36c9d0" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M1352,270 L1340,264 L1340,276 L1352,270"/>
+<polyline fill="none" vector-effect="none" points="1545,373 1545,442 " />
+</g>
+
+<g fill="#36c9d0" fill-opacity="1" stroke="#36c9d0" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M1545,442 L1551,430 L1539,430 L1545,442"/>
+<polyline fill="none" vector-effect="none" points="1352,545 1308,545 " />
+</g>
+
+<g fill="#36c9d0" fill-opacity="1" stroke="#36c9d0" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M1308,545 L1320,551 L1320,539 L1308,545"/>
+<polyline fill="none" vector-effect="none" points="922,545 878,545 " />
+</g>
+
+<g fill="#36c9d0" fill-opacity="1" stroke="#36c9d0" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M878,545 L890,551 L890,539 L878,545"/>
+<polyline fill="none" vector-effect="none" points="492,545 448,545 " />
+</g>
+
+<g fill="#36c9d0" fill-opacity="1" stroke="#36c9d0" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="16" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M448,545 L460,551 L460,539 L448,545"/>
+</g>
+
+<g fill="#36c9d0" fill-opacity="1" stroke="#9db3ca" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Leelawadee UI" font-size="17" font-weight="400" font-style="normal" 
+>
+<text fill="#9db3ca" fill-opacity="1" stroke="none" xml:space="preserve" x="541.5" y="719.5" font-family="Leelawadee UI" font-size="17" font-weight="400" font-style="normal" 
+ >ระหว่างทำงาน: แสดง </text>
+<text fill="#9db3ca" fill-opacity="1" stroke="none" xml:space="preserve" x="678.5" y="719.5" font-family="Leelawadee UI" font-size="17" font-weight="400" font-style="normal" 
+ >CPU / GPU </text>
+<text fill="#9db3ca" fill-opacity="1" stroke="none" xml:space="preserve" x="767.5" y="719.5" font-family="Leelawadee UI" font-size="17" font-weight="400" font-style="normal" 
+ >รวมทั้งเครื่องจาก </text>
+<text fill="#9db3ca" fill-opacity="1" stroke="none" xml:space="preserve" x="879.5" y="719.5" font-family="Leelawadee UI" font-size="17" font-weight="400" font-style="normal" 
+ >Windows PDH | </text>
+<text fill="#9db3ca" fill-opacity="1" stroke="none" xml:space="preserve" x="1001.5" y="719.5" font-family="Leelawadee UI" font-size="17" font-weight="400" font-style="normal" 
+ >หากเกิดข้อผิดพลาด: แก้ภาพแล้วเริ่มใหม่</text>
+</g>
+</g>
+</svg>
