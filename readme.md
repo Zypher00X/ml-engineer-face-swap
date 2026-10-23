@@ -74,9 +74,9 @@ Pipeline ใช้ similarity alignment, การย่อแบบ supersampli
 
 ## System Architecture
 
-[![System Architecture ของ GUI และ HyperSwap256](docs/readme_assets/system_architecture.png)](https://www.canva.com/design/DAHY3NJ8-zg/edit)
+[![System Architecture ของ GUI และ HyperSwap256](docs/readme_assets/system_architecture.png)](https://canva.link/tfb5d0uwtqyd5dz)
 
-**[เปิดแผนภาพฉบับละเอียดบน Canva Whiteboard](https://www.canva.com/design/DAHY3NJ8-zg/edit)** — 21 บล็อก ครอบคลุม GUI/worker, การเชื่อมโมเดล, tensor shapes, สูตร mask/สี/คะแนน และตำแหน่ง CPU/GPU ใช้โลโก้เทคโนโลยีจาก [SVGL](https://svgl.app/)
+**[เปิดแผนภาพฉบับละเอียดบน Canva Whiteboard](https://canva.link/tfb5d0uwtqyd5dz)** — 21 บล็อก ครอบคลุม GUI/worker, การเชื่อมโมเดล, tensor shapes, สูตร mask/สี/คะแนน และตำแหน่ง CPU/GPU ใช้โลโก้เทคโนโลยีจาก [SVGL](https://svgl.app/)
 
 HyperSwap มี learned mask ที่ผสมภาพกับ B **ภายในโมเดลอยู่แล้ว** ก่อนส่ง output ออกมา จากนั้นโปรเจคจึงผสมด้วย semantic mask อีกชั้นหนึ่ง จึงควรแยกสองส่วนนี้เมื่อวิเคราะห์คุณภาพ
 
