@@ -32,3 +32,27 @@ LivePortrait_env/
 src/utils/dependencies/XPose/models/UniPose/ops/build
 src/utils/dependencies/XPose/models/UniPose/ops/dist
 src/utils/dependencies/XPose/models/UniPose/ops/MultiScaleDeformableAttention.egg-info
+
+# Local Python environment
+/venv/
+
+# Generated outputs and temporary files
+/outputs/
+/tmp/
+*.part
+*.log
+
+# Personal test images in the project root
+/*.jpg
+/*.jpeg
+/*.png
+/*.webp
+
+# Cached face data
+*.pkl
+*.pickle
+
+# Local credentials
+.env
+.env.*
+!.env.example

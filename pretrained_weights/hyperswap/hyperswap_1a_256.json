@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/facefusion/facefusion-assets/releases/download/models-3.3.0/hyperswap_1a_256.onnx",
+  "publisher_hash": "79e50d4b",
+  "crc32": "79e50d4b",
+  "sha256": "c0e98a8a03a238f461ed3d2570e426b49f46745ee400854a60dceeb70c246add",
+  "bytes": 402742682,
+  "license": "ResearchRAIL-MS",
+  "native_size": 256,
+  "documentation": "https://github.com/facefusion/facefusion-labs/tree/master/hyperswap"
+}
