@@ -4,7 +4,16 @@
 
 เลือกภาพต้นฉบับ **A** เพื่อใช้ตัวตน และภาพเป้าหมาย **B** เพื่อใช้ท่าศีรษะ สีหน้า และองค์ประกอบภาพ จากนั้นกดเริ่มสลับใบหน้า ดูผล และบันทึกเป็น PNG ได้ในหน้าจอเดียว
 
-โปรเจคนี้พัฒนาต่อยอดจาก [LivePortrait ของ Kuaishou / KwaiVGI](https://github.com/KwaiVGI/LivePortrait) โดยเพิ่ม GUI โทนดำ, HyperSwap backend, การลด alias จากการย่อภาพ, การผสานแบบคำนึงถึงแว่น/สีผิว และข้อมูลตรวจสอบผล โค้ดส่วนต่อยอดดูแลโดย [Zypher00X](https://github.com/Zypher00X) โมเดล pretrained เป็นผลงานของเจ้าของโมเดลที่ให้เครดิตด้านล่าง
+โปรเจคนี้พัฒนาต่อยอดจาก [LivePortrait ของ Kuaishou / KwaiVGI](https://github.com/KwaiVGI/LivePortrait) โดยเพิ่ม GUI โทนดำ, HyperSwap backend, การลด alias จากการย่อภาพ, การผสานแบบคำนึงถึงแว่น/สีผิว และข้อมูลตรวจสอบผล โดยใช้ Algorithm และเทคนิคหลักดังนี้:
+
+- **Face Detection, Landmarks และ Identity Embedding:** ใช้ InsightFace ตรวจใบหน้า หาจุดอ้างอิง และสกัดเวกเตอร์ ArcFace 512 มิติจาก A เพื่อส่งให้ HyperSwap 1a สร้างใบหน้าที่ความละเอียด native 256×256 โดยรับท่าศีรษะและสีหน้าจาก B
+- **Similarity Alignment และ Anti-aliasing:** จัดแนวใบหน้าด้วย similarity transform ก่อนเข้าโมเดล เมื่อย่อภาพในโหมด `area` จะใช้ supersampling 4 เท่าแล้วลดขนาดด้วย `INTER_AREA` พร้อมชดเชยตำแหน่งศูนย์กลางพิกเซล เพื่อลด alias โดยรักษาพิกัดให้ตรงกัน
+- **Semantic Segmentation และ Glasses-aware Mask:** ใช้ BiSeNet–ResNet18 แยกส่วนใบหน้า แล้วใช้ morphological erosion/dilation ประมาณแนวกรอบแว่นเพื่อช่วยรักษาแว่นจาก B โดย mask นี้เป็นการประมาณและยังมีข้อจำกัดกับกรอบบางหรือแสงสะท้อน
+- **Skin-only LAB Color Matching:** ปรับสีใน LAB ด้วย median และ interquartile range ของบริเวณผิว แล้วจำกัดการปรับไว้เฉพาะผิว เพื่อลดผลกระทบต่อสีตา ฟัน และริมฝีปาก
+- **Smoothstep Feathering และ Direct Compositing:** ใช้ distance transform และ smoothstep ทำขอบ mask ให้นุ่ม ก่อนนำภาพ native256 กลับไปผสานกับ B โดยตรงเพื่อลดการ resample ซ้ำ
+- **Diagnostics และการประเมินผล:** บันทึก config, model hash, mask และภาพระหว่างขั้นตอน พร้อมคำนวณ cosine similarity ของ face embedding และตรวจท่าศีรษะ/landmarks โดยแยกคะแนนอัตโนมัติออกจากการยอมรับคุณภาพภาพด้วยตา
+
+โค้ดส่วนต่อยอดดูแลโดย [Zypher00X](https://github.com/Zypher00X) โมเดล pretrained เป็นผลงานของเจ้าของโมเดลที่ให้เครดิตด้านล่าง
 
 ## หน้าตาโปรแกรม
 
@@ -39,7 +48,7 @@
 
 ### ตัวอย่างที่ 2 — เปรียบเทียบกับเป้าหมายอีกภาพ
 
-![ตัวอย่างที่ 2: การเปลี่ยนต้นฉบับและภาพเป้าหมายที่มีเลนส์ใส](docs/readme_assets/showcase_clear_lenses.png)
+![ตัวอย่างที่ 2: ใบหน้าต้นฉบับ ภาพเป้าหมายกลางแจ้ง และผลสลับใบหน้า](docs/readme_assets/showcase_outdoor.png)
 
 ตัวอย่างแสดงพฤติกรรมของรุ่นทดลอง ไม่ใช่การรับรองความแม่นยำทุกภาพ โดยเฉพาะกรอบบาง สะพานแว่น แสงสะท้อน และรายละเอียดตา/ปากยังมีข้อจำกัด
 
